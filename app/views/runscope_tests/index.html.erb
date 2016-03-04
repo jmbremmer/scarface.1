@@ -1,0 +1,27 @@
+<h1>Listing runscope_tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @runscope_tests.each do |runscope_test| %>
+      <tr>
+        <td><%= runscope_test.name %></td>
+        <td><%= runscope_test.url %></td>
+        <td><%= link_to 'Show', runscope_test %></td>
+        <td><%= link_to 'Edit', edit_runscope_test_path(runscope_test) %></td>
+        <td><%= link_to 'Destroy', runscope_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Runscope test', new_runscope_test_path %>

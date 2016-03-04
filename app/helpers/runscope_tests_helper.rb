@@ -1,0 +1,2 @@
+module RunscopeTestsHelper
+end
