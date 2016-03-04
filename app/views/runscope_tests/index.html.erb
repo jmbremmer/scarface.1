@@ -17,8 +17,9 @@
       <tr>
         <td><%= runscope_test.id %></td>
         <td><%= runscope_test.name %></td>
-        <td><%= runscope_test.url %></td>
+        <td><%= link_to  runscope_test.url, runscope_test.url, :target => '_blank' %></td>
         <td><%=l runscope_test.created_at, format: :long %></td>
+        <td><button type="button" ><%= link_to 'TEST', runscope_test.url, :target => '_blank' %></button></td>
         <td>
           <%= link_to runscope_test_path(runscope_test), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
