@@ -22,11 +22,14 @@
         <td><button type="button" ><%= link_to 'TEST', runscope_test.url, :target => '_blank' %></button></td>
         <td>
           <%= link_to runscope_test_path(runscope_test), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
+            <!--<%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>-->
+            <button type="button">Edit</button>
           <%- end -%>
           <%= link_to runscope_test_path(runscope_test), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
+            <!--<%= glyph 'remove' %> -->
+            <button type="button">Delete</button>
+
           <%- end -%>
         </td>
       </tr>
