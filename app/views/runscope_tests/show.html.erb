@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = RunscopeTest -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => RunscopeTest %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @runscope_test.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @runscope_test.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @runscope_test.url %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @runscope_test.url %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              runscope_tests_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_runscope_test_path(@runscope_test), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              runscope_test_path(@runscope_test),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_runscope_test_path(@runscope_test) %> |
-<%= link_to 'Back', runscope_tests_path %>
