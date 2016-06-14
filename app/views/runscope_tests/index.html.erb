@@ -29,6 +29,7 @@
           <%= link_to runscope_test_path(runscope_test), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
             <!--<%= glyph 'remove' %> -->
             <button type="button">Delete</button>
+            <td><button type="button", action="/request" method="GET" ><%= link_to 'Results', runscope_test.url, :target => '_blank' %></button></td>
 
           <%- end -%>
         </td>
